@@ -12,6 +12,6 @@ setup(
   ],
   entry_points='''
   [console_scripts]
-  pyhelper=commands:cli
+  pyhelper=cli_handler:cli
   '''
 )

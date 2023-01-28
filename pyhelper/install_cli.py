@@ -11,13 +11,13 @@ def check_cli_existence(
   reqs = subprocess.check_output([sys.executable, '-m', 'pip', 'freeze'])
   installed_packages = [r.decode().split('==')[0] for r in reqs.split()]
 
-  for package in ['toolbox']:
+  for package in ['pyhelper']:
     try:
         dist = pkg_resources.get_distribution(package)
         print('{} ({}) is installed!'.format(dist.key, dist.version))
     except pkg_resources.DistributionNotFound:
         #print('{} is NOT installed'.format(package))
         print('Installing PyHelper Features!')
-        os.system("pip install -e ./Toolbox")
+        os.system("pip install -e ./pyhelper")
 
   #print(installed_packages[113]) 
